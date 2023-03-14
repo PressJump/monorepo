@@ -60,7 +60,7 @@ model Comment {
 }
 
 model Post {
-  id      String  @id @default(cuid())
+  id      String @id @default(dbgenerated("postid(nextval('postid_seq'))"))
   title   String
   url     String?
   site    String?
